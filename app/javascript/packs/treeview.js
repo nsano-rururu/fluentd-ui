@@ -11,10 +11,12 @@ window.addEventListener("load", () => {
         type: String
       }
     },
-    data: {
-      preview: "",
-      path: "",
-      paths: []
+    data() {
+      return {
+        preview: "",
+        path: "",
+        paths: []
+      };
     },
 
     computed: {

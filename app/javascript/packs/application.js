@@ -23,12 +23,13 @@ import "startbootstrap-sb-admin/js/sb-admin";
 
 import { createApp } from "vue";
 import { createStore } from "vuex";
-import BootstrapVue3 from "bootstrap-vue-3";
-import "bootstrap-vue-3/dist/bootstrap-vue-3.css";
+import BootstrapVueNext from "bootstrap-vue-next";
+import "bootstrap-vue-next/dist/bootstrap-vue-next.css";
 
 // Make Vue and Vuex available globally for compatibility
 window.Vue = { createApp };
 window.Vuex = { createStore };
+window.BootstrapVueNext = BootstrapVueNext;
 
 import "../stylesheets/application.scss";
 

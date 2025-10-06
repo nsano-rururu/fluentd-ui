@@ -3,13 +3,15 @@ import { createApp } from "vue";
 
 window.addEventListener("load", ()=> {
   const app = createApp({
-    data: {
-      "logUrl": "",
-      "initialAutoReload": false,
-      "autoFetch": false,
-      "logs": [],
-      "limit": 30,
-      "processing": false
+    data() {
+      return {
+        "logUrl": "",
+        "initialAutoReload": false,
+        "autoFetch": false,
+        "logs": [],
+        "limit": 30,
+        "processing": false
+      };
     },
 
     computed: {

@@ -18,10 +18,6 @@ window.addEventListener("load", () => {
         }
       };
     },
-    mounted: function() {
-      this.$on("add-grep-container", this.addGrepContainer);
-      this.$on("remove-grep-container", this.removeGrepContainer);
-    },
     methods: {
       addGrepContainer: function(containerType, index) {
         const found = this.containers[containerType].indexOf(false);

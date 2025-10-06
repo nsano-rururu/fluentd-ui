@@ -17,13 +17,10 @@ const GrepPattern = {
     };
   },
 
-  filters: {
+  methods: {
     humanize: function(value) {
       return _.capitalize(value.replace(/_/g, " "));
-    }
-  },
-
-  methods: {
+    },
     add: function(event) {
       this.$emit("add-grep-pattern", this.grepType, this.subIndex);
     },

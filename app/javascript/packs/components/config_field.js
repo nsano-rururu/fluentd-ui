@@ -19,12 +19,6 @@ const ConfigField = {
     };
   },
 
-  filters: {
-    humanize: function(value) {
-      return _.capitalize(value.replace(/_/g, " "));
-    }
-  },
-
   mounted: function() {
     if (this.option.type === "enum") {
       this.selectedValue = this.option.default;
@@ -103,6 +97,9 @@ const ConfigField = {
       } else {
         return "";
       }
+    },
+    humanize: function(value) {
+      return _.capitalize(value.replace(/_/g, " "));
     }
   }
 };

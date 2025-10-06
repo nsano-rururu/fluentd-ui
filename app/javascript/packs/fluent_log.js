@@ -1,7 +1,8 @@
 "use strict";
+import { createApp } from "vue";
+
 window.addEventListener("load", ()=> {
-  new Vue({
-    el: "#fluent-log",
+  const app = createApp({
     data: {
       "logUrl": "",
       "initialAutoReload": false,
@@ -61,4 +62,5 @@ window.addEventListener("load", ()=> {
       }
     }
   });
+  app.mount("#fluent-log");
 });

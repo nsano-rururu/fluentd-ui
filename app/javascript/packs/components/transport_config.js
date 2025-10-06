@@ -25,14 +25,12 @@ const TransportConfig = {
       return Rails.csrfToken();
     }
   },
-  filters: {
-    toUpper: function(value) {
-      return _.toUpper(value);
-    }
-  },
   mounted: function() {
   },
   methods: {
+    toUpper: function(value) {
+      return _.toUpper(value);
+    },
     onChange: function() {
       console.log(this.pluginType, this.pluginName, this.transportType);
       this.updateSection();

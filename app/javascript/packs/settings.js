@@ -2,6 +2,7 @@
 "use strict";
 
 import "lodash/lodash";
+import { createApp } from "vue";
 
 window.addEventListener("load", () => {
   const SettingSection = {
@@ -106,8 +107,7 @@ window.addEventListener("load", () => {
     }
   };
 
-  new Vue({
-    el: "#vue-setting",
+  const app = createApp({
     components: {
       "setting-section": SettingSection
     },
@@ -135,15 +135,15 @@ window.addEventListener("load", () => {
         $.getJSON(`${relativeUrlRoot}/api/settings`, (data) => {
           console.log(data);
           _.each(data, (elements, label) => {
-            this.$set(this.sections, label, elements);
+            this.sections[label] = elements;
           });
           _.each(this.sections, (elements, label) => {
             if (_.isEmpty(data[label])) {
-              this.$delete(this.sections, label);
+              delete this.sections[label];
             }
           });
           if (_.isEmpty(data["ROOT"])) {
-            this.$set(this.sections, "ROOT", []);
+            this.sections["ROOT"] = [];
           }
           this.loaded = true;
           setTimeout(() => {
@@ -153,4 +153,5 @@ window.addEventListener("load", () => {
       }
     }
   });
+  app.mount("#vue-setting");
 });

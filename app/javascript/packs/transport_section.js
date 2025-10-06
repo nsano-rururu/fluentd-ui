@@ -1,19 +1,14 @@
 /* global _ */
 "use strict";
 import "lodash/lodash";
+import { createApp } from "vue";
 
 import ConfigField from "./components/config_field";
 
 window.addEventListener("load", () => {
-  new Vue({
-    el: "#transport-section",
+  const app = createApp({
     components: {
       "config-field": ConfigField
-    },
-    filters: {
-      toUpper: function(value) {
-        return _.toUpper(value);
-      }
     },
     props: {
       "transportType": {
@@ -66,7 +61,11 @@ window.addEventListener("load", () => {
           this.commonOptions = data.transport.commonOptions;
           this.advancedOptions = data.transport.advancedOptions;
         });
+      },
+      toUpper: function(value) {
+        return _.toUpper(value);
       }
     }
   });
+  app.mount("#transport-section");
 });

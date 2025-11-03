@@ -67,10 +67,19 @@ This is necessary because the old lock file contains Rails 5.2 and Ruby 2.x depe
 bundle install
 ```
 
-If you encounter permission errors, **do not use sudo**. Instead, install to a local path:
+**Important:** Do not use `bundle install --path vendor/bundle`. This installs gems to a local directory, which requires using `bundle exec` for all Rails commands. Use system-wide installation for simpler workflow.
+
+If you encounter permission errors, configure bundler to install to your user directory:
 
 ```bash
-bundle install --path vendor/bundle
+bundle config set --local path 'vendor/bundle'
+bundle install
+```
+
+Then you must use `bundle exec` for all commands:
+
+```bash
+bundle exec rails server
 ```
 
 ### 5. Install JavaScript Dependencies
@@ -84,6 +93,8 @@ If you don't have yarn installed:
 ```bash
 npm install -g yarn
 ```
+
+**Note:** You may see peer dependency warnings about `vue-loader` and `@vitejs/plugin-vue`. These are harmless warnings and can be safely ignored. The application uses Webpacker, not direct webpack/vite integration.
 
 ### 6. Verify Installation
 
@@ -169,17 +180,46 @@ sh: 1: vitest: not found
 yarn install
 ```
 
-### Issue 5: Permission Denied
+### Issue 5: Could Not Find Gems Error
+
+**Error:**
+```
+Could not find rake-13.3.1, pry-0.15.2, ... in locally installed gems
+Run `bundle install` to install missing gems.
+```
+
+**Cause:** You used `bundle install --path vendor/bundle` which installs gems to a local directory.
+
+**Solution 1 (Recommended):** Reinstall gems system-wide:
+```bash
+rm -rf vendor/bundle
+bundle install
+bin/rails server
+```
+
+**Solution 2:** Use `bundle exec` for all commands:
+```bash
+bundle exec rails server
+```
+
+### Issue 6: Yarn Peer Dependency Warnings
+
+**Warning:**
+```
+warning " > vue-loader@16.8.3" has unmet peer dependency "webpack@^4.1.0 || ^5.0.0-0".
+warning " > @vitejs/plugin-vue@4.6.2" has unmet peer dependency "vite@^4.0.0 || ^5.0.0".
+```
+
+**Solution:** These warnings are harmless and can be ignored. The application uses Webpacker for asset compilation, not direct webpack or vite integration. The packages are used only for testing purposes.
+
+### Issue 7: Permission Denied
 
 **Error:**
 ```
 Don't run Bundler as root.
 ```
 
-**Solution:** Don't use `sudo` with bundle commands. If you need to install to a specific location:
-```bash
-bundle install --path vendor/bundle
-```
+**Solution:** Don't use `sudo` with bundle commands. Bundler can handle permissions automatically.
 
 ## What's Changed
 

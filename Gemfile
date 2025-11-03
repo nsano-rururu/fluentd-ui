@@ -24,7 +24,7 @@ group :test do
   gem "factory_bot_rails"
   gem "capybara", "~> 3.36"
   gem "capybara-screenshot"
-  gem "webdrivers"
+  gem "webdrivers", "= 5.3.0"
   gem "simplecov", "~> 0.21.0", require: false
   gem "webmock", "~> 3.14"
   gem "timecop"

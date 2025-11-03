@@ -26,20 +26,22 @@ bin/rails server
 
 ### 1. Update Ruby Version
 
-The minimum required Ruby version is now **3.0.0**, but **3.2.x or later is recommended**.
+The minimum required Ruby version is now **3.0.0**. Any Ruby version 3.0.0 or later will work (tested with 3.2.9).
+
+**Note:** The `.ruby-version` file specifies 3.0.0 as the minimum version, not an exact requirement. You can use Ruby 3.0.x, 3.1.x, 3.2.x, or any newer 3.x version.
 
 #### Using rbenv:
 ```bash
-rbenv install 3.2.0
-rbenv local 3.2.0  # or rbenv global 3.2.0
-ruby -v  # Verify: should show 3.2.0 or later
+rbenv install 3.2.9  # or any Ruby 3.x version
+rbenv local 3.2.9  # or rbenv global 3.2.9
+ruby -v  # Verify: should show 3.0.0 or later
 ```
 
 #### Using rvm:
 ```bash
-rvm install 3.2.0
-rvm use 3.2.0
-ruby -v  # Verify: should show 3.2.0 or later
+rvm install 3.2.9  # or any Ruby 3.x version
+rvm use 3.2.9
+ruby -v  # Verify: should show 3.0.0 or later
 ```
 
 ### 2. Update Bundler

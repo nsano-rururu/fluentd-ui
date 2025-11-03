@@ -1,6 +1,18 @@
-# Vue 3 Migration Summary
+# Vue 3 and Rails 6.1 Migration Summary
 
-This document summarizes the changes made to migrate from Vue 2 to Vue 3.
+This document summarizes the changes made to migrate from Vue 2 to Vue 3 and Rails 5.2 to Rails 6.1 (with Ruby 3.0+ support).
+
+## Rails & Ruby Upgrade
+
+### Ruby Version Requirement
+- **Before**: Ruby 2.2.2 or later
+- **After**: Ruby 3.0.0 or later
+
+### Rails Version
+- **Before**: Rails ~> 5.2.0
+- **After**: Rails ~> 6.1.0
+
+For detailed Rails upgrade information, see [RAILS_UPGRADE.md](RAILS_UPGRADE.md).
 
 ## Package Updates
 

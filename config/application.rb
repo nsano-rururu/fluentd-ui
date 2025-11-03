@@ -31,7 +31,7 @@ require "webpacker"
 module FluentdUi
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 6.1
+    config.load_defaults 7.0
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
@@ -46,11 +46,13 @@ module FluentdUi
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = 'en'
     config.i18n.available_locales = %i(en ja)
-    config.autoload_paths += %W(#{config.root}/lib #{Rails.root}/app/form_builders)
+    config.autoload_paths += %W(#{Rails.root}/app/form_builders)
     
-    # Zeitwerk doesn't support files/directories with hyphens, ignore lib/fluentd-ui*
+    # Configure Zeitwerk to load lib directory, ignore files with hyphens
+    Rails.autoloaders.main.push_dir(Rails.root.join("lib"))
     Rails.autoloaders.main.ignore(Rails.root.join("lib", "fluentd-ui"))
     Rails.autoloaders.main.ignore(Rails.root.join("lib", "fluentd-ui.rb"))
+    Rails.autoloaders.main.ignore(Rails.root.join("lib", "tasks"))
 
     config.active_job.queue_adapter = :sucker_punch
 

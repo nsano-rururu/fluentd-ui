@@ -34,7 +34,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "fluentd", [">= 1.0.0", "< 2"]
-  spec.add_dependency 'rails', '~> 6.1.0'
+  spec.add_dependency 'rails', '~> 7.0.0'
   spec.add_dependency "dig_rb", "~> 1.0.0"
   spec.add_dependency "bootsnap", ">= 1.1.0"
   spec.add_dependency 'sucker_punch', "~> 2.0.4"

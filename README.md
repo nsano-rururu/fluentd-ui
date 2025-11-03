@@ -60,7 +60,7 @@ Use bundler:
     $ gem install bundler
     $ bundle install
 
-**Note:** After upgrading to Rails 6.1, you may need to delete `Gemfile.lock` and run `bundle install` again to resolve dependency conflicts.
+**Note:** After upgrading to Rails 6.1, you may need to delete `Gemfile.lock` and run `bundle install` again to resolve dependency conflicts. The Gemfile includes a fix for Ruby 3.2+ compatibility with `concurrent-ruby`.
 
 ### Install dependent JavaScript packages
 

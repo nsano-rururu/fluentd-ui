@@ -30,3 +30,7 @@ group :test do
   gem "timecop"
   gem "selenium-webdriver", "~> 4.0"
 end
+
+# Fix for Ruby 3.2+ compatibility issue with concurrent-ruby 1.3.5+
+# See: https://github.com/ruby-concurrency/concurrent-ruby/issues/1051
+gem 'concurrent-ruby', '1.3.4'

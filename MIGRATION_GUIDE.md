@@ -212,7 +212,24 @@ warning " > @vitejs/plugin-vue@4.6.2" has unmet peer dependency "vite@^4.0.0 || 
 
 **Solution:** These warnings are harmless and can be ignored. The application uses Webpacker for asset compilation, not direct webpack or vite integration. The packages are used only for testing purposes.
 
-### Issue 7: Permission Denied
+### Issue 7: Logger NameError with Ruby 3.2+
+
+**Error:**
+```
+uninitialized constant ActiveSupport::LoggerThreadSafeLevel::Logger (NameError)
+Logger::Severity.constants.each do |severity|
+```
+
+**Cause:** This is a known compatibility issue with `concurrent-ruby` 1.3.5+ and Ruby 3.2+.
+
+**Solution:** The Gemfile has been updated to pin `concurrent-ruby` to version 1.3.4, which resolves this issue. After pulling the latest changes, run:
+```bash
+bundle install
+```
+
+See: https://github.com/ruby-concurrency/concurrent-ruby/issues/1051
+
+### Issue 8: Permission Denied
 
 **Error:**
 ```

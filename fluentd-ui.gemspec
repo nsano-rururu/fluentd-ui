@@ -34,7 +34,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "fluentd", [">= 1.0.0", "< 2"]
-  spec.add_dependency 'rails', '~> 5.2.0'
+  spec.add_dependency 'rails', '~> 6.0.0'
   spec.add_dependency "dig_rb", "~> 1.0.0"
   spec.add_dependency "bootsnap", ">= 1.1.0"
   spec.add_dependency 'sucker_punch', "~> 2.0.4"
@@ -43,7 +43,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'sass-rails', '~> 5.0.7'
   spec.add_dependency "haml-rails", "~> 1.0"
   spec.add_dependency 'jbuilder', '~> 2.0'
-  spec.add_dependency "draper", '~> 3.0'
+  spec.add_dependency "draper", '~> 4.0'
   spec.add_dependency "bundler"
   spec.add_dependency "httpclient", "~> 2.5" # same as td-agent
   spec.add_dependency "settingslogic"

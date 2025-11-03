@@ -31,24 +31,12 @@ And some additional packages (Debian / Ubuntu)
 
 ## How to install and run
 
-### From gem (production)
-
     $ gem install fluentd-ui
     $ fluentd-ui setup
     $ fluentd-ui start --daemonize
 
-### For development
-
-    $ git clone https://github.com/fluent/fluentd-ui.git
-    $ cd fluentd-ui
-    $ bundle install
-    $ yarn install
-    $ bin/rails server
-
-Access http://localhost:9292 (or http://localhost:3000 for development) by web browser.
+Access http://localhost:9292 by web browser.
 The default account is username="admin" and password="changeme".
-
-**Note:** After upgrading to Rails 6.1, you may need to delete `Gemfile.lock` and run `bundle install` again to resolve dependency conflicts.
 
 ### Run under sub path
 
@@ -71,6 +59,8 @@ Use bundler:
 
     $ gem install bundler --version 1.17.3
     $ bundle install --path vendor/bundle
+
+**Note:** After upgrading to Rails 6.1, you may need to delete `Gemfile.lock` and run `bundle install` again to resolve dependency conflicts.
 
 ### Install dependent JavaScript packages
 

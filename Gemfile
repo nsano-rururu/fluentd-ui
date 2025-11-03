@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 
 gemspec
 
+# Pin haml to 5.x for kramdown-haml compatibility
+gem "haml", "~> 5.2"
+
 # spec.add_development_dependency gems doesn't installed by `gem install fluentd-ui`, but required them from config/application.rb, then error.
 # this is workaround for that.
 group :development, :test do

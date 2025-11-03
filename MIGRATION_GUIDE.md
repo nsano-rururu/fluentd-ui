@@ -28,8 +28,6 @@ bin/rails server
 
 The minimum required Ruby version is now **3.0.0**. Any Ruby version 3.0.0 or later will work (tested with 3.2.9).
 
-**Note:** The `.ruby-version` file specifies 3.0.0 as the minimum version, not an exact requirement. You can use Ruby 3.0.x, 3.1.x, 3.2.x, or any newer 3.x version.
-
 #### Using rbenv:
 ```bash
 rbenv install 3.2.9  # or any Ruby 3.x version

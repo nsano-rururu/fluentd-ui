@@ -1,4 +1,4 @@
-FROM ruby:2.7.0-slim
+FROM ruby:3.2-slim
 
 LABEL maintainer="Fluentd developers <fluentd@googlegroups.com>"
 LABEL description="fluentd-ui docker image"

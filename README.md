@@ -57,7 +57,7 @@ Access http://localhost:9292/prefix by web browser.
 
 Use bundler:
 
-    $ gem install bundler --version 1.17.3
+    $ gem install bundler
     $ bundle install --path vendor/bundle
 
 **Note:** After upgrading to Rails 6.1, you may need to delete `Gemfile.lock` and run `bundle install` again to resolve dependency conflicts.

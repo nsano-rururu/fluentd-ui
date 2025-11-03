@@ -93,29 +93,71 @@ When upgrading an existing installation:
 
 1. **Update Ruby**:
    ```bash
-   # Install Ruby 3.0 or later
-   rbenv install 3.0.0  # or latest 3.x version
-   rbenv global 3.0.0
+   # Install Ruby 3.0 or later (3.2+ recommended)
+   rbenv install 3.2.0  # or latest 3.x version
+   rbenv global 3.2.0
    ```
 
-2. **Update Gemfile.lock**:
+2. **Remove old Gemfile.lock** (IMPORTANT):
    ```bash
-   bundle update
+   rm Gemfile.lock
+   ```
+   
+   This is necessary because the old lock file contains Rails 5.2 dependencies that conflict with Rails 6.1.
+
+3. **Install dependencies**:
+   ```bash
+   bundle install
    ```
 
-3. **Update JavaScript dependencies** (already done in Vue 3 migration):
+4. **Update JavaScript dependencies** (already done in Vue 3 migration):
    ```bash
    yarn install
    ```
 
-4. **Run tests**:
+5. **Run tests**:
    ```bash
    bundle exec rake test
    npm run test
    ```
 
-5. **Check for deprecation warnings**:
+6. **Check for deprecation warnings**:
    Look for any deprecation warnings in the logs and address them.
+
+## Troubleshooting
+
+### Gemfile.lock Conflicts
+
+If you encounter errors like:
+```
+You have requested:
+  capybara ~> 3.36
+
+The bundle currently has capybara locked at 3.4.2.
+Try running `bundle update capybara`
+```
+
+**Solution**: Delete the `Gemfile.lock` file and run `bundle install` again:
+```bash
+rm Gemfile.lock
+bundle install
+```
+
+### Bundler Version Warnings
+
+If you see warnings about `Pathname#untaint` being deprecated, you're using an old version of Bundler. Update it:
+```bash
+gem install bundler
+# or
+gem update bundler
+```
+
+### Missing Gems
+
+If you encounter "Could not find gem" errors when starting the server, ensure all dependencies are installed:
+```bash
+bundle install
+```
 
 ## Compatibility Notes
 

@@ -33,14 +33,16 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
+  spec.required_ruby_version = '>= 3.0.0'
+  
   spec.add_dependency "fluentd", [">= 1.0.0", "< 2"]
-  spec.add_dependency 'rails', '~> 5.2.0'
+  spec.add_dependency 'rails', '~> 6.1.0'
   spec.add_dependency "dig_rb", "~> 1.0.0"
   spec.add_dependency "bootsnap", ">= 1.1.0"
   spec.add_dependency 'sucker_punch', "~> 2.0.4"
   spec.add_dependency 'addressable'
   spec.add_dependency "font-awesome-rails"
-  spec.add_dependency 'sass-rails', '~> 5.0.7'
+  spec.add_dependency 'sass-rails', '~> 6.0'
   spec.add_dependency "haml-rails", "~> 1.0"
   spec.add_dependency 'jbuilder', '~> 2.0'
   spec.add_dependency "draper", '~> 3.0'

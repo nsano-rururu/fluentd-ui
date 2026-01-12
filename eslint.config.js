@@ -25,7 +25,10 @@ module.exports = [
       "no-console": "off",
       "no-unused-vars": ["off", {
         "argsIgnorePattern": "^_"
-      }]
+      }],
+      "vue/no-deprecated-events-api": "warn",
+      "vue/no-deprecated-data-object-declaration": "warn",
+      "vue/require-prop-types": "warn"
     }
   },
   {

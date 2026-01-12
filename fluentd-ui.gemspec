@@ -43,16 +43,18 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'addressable'
   spec.add_dependency "font-awesome-rails"
   spec.add_dependency 'sass-rails', '~> 6.0'
-  spec.add_dependency "haml-rails", "~> 1.0"
+  spec.add_dependency "haml", "~> 6.0"
+  spec.add_dependency "haml-rails", "~> 2.0"
   spec.add_dependency 'jbuilder', '~> 2.0'
-  spec.add_dependency "draper", '~> 3.0'
+  spec.add_dependency "draper", '~> 4.0'
   spec.add_dependency "bundler"
   spec.add_dependency "httpclient", "~> 2.5" # same as td-agent
   spec.add_dependency "settingslogic"
   spec.add_dependency "puma"
   spec.add_dependency "thor"
   spec.add_dependency "kramdown", "> 1.0.0"
-  spec.add_dependency "kramdown-haml"
+  # kramdown-haml is incompatible with Haml 6+, removing for now
+  # spec.add_dependency "kramdown-haml"
   spec.add_dependency "rubyzip", ">= 1.1", "< 3.0" # API changed as Zip::ZipFile -> Zip::File since v1.0.0
   spec.add_dependency "diff-lcs"
   spec.add_dependency "webpacker"

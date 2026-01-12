@@ -22,11 +22,11 @@ end
 
 group :test do
   gem "factory_bot_rails"
-  gem "capybara", "~> 3.4.2"
+  gem "capybara", "~> 3.40"
   gem "capybara-screenshot"
   gem "webdrivers"
-  gem "simplecov", "~> 0.16.1", require: false
-  gem "webmock", "~> 3.12.2"
+  gem "simplecov", "~> 0.22", require: false
+  gem "webmock", "~> 3.23"
   gem "timecop"
-  gem "selenium-webdriver", "~> 3.13.1"
+  gem "selenium-webdriver", "~> 4.27"
 end

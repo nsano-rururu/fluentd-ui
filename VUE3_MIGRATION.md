@@ -178,7 +178,7 @@ Migrated from `bootstrap-vue` to `bootstrap-vue-next`, which is the Vue 3 compat
 - `app/views/shared/vue/_transport_section.html.haml` - Changed filter syntax to method calls
 
 ### Configuration Files
-- `.eslintrc.js` - Updated to use `plugin:vue/vue3-recommended`
+- `eslint.config.js` - Updated to use `plugin:vue/vue3-recommended`
 - `package.json` - Updated all dependencies and added resolutions
 
 ## Testing

@@ -1,14 +1,17 @@
 "use strict";
+import { createApp } from "vue";
+
 window.addEventListener("load", ()=> {
-  new Vue({
-    el: "#fluent-log",
-    data: {
-      "logUrl": "",
-      "initialAutoReload": false,
-      "autoFetch": false,
-      "logs": [],
-      "limit": 30,
-      "processing": false
+  const app = createApp({
+    data() {
+      return {
+        "logUrl": "",
+        "initialAutoReload": false,
+        "autoFetch": false,
+        "logs": [],
+        "limit": 30,
+        "processing": false
+      };
     },
 
     computed: {
@@ -61,4 +64,5 @@ window.addEventListener("load", ()=> {
       }
     }
   });
+  app.mount("#fluent-log");
 });

@@ -2,12 +2,15 @@
   "name": "fluentd-ui",
   "private": true,
   "scripts": {
-    "lint": "eslint app/javascript"
+    "lint": "eslint app/javascript",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest --coverage"
   },
   "dependencies": {
     "@rails/webpacker": "^4.0.2",
     "bootstrap": "^4.5.0",
-    "bootstrap-vue": "^2.0.0-rc.14",
+    "bootstrap-vue-next": "^0.14.10",
     "codemirror": "^5.58.2",
     "datatables.net-bs4": "1.10.24",
     "es6-promise": "^4.2.4",
@@ -16,14 +19,22 @@
     "popper.js": "^1.14.3",
     "rails-ujs": "^5.2.0",
     "startbootstrap-sb-admin": "^5.0.3",
-    "vue": "^2.6.8",
-    "vue-loader": "^15.7.0",
-    "vue-template-compiler": "^2.6.8",
-    "vuex": "^3.0.1"
+    "vue": "^3.3.4",
+    "vue-loader": "^16.8.3",
+    "vuex": "^4.0.2"
   },
   "devDependencies": {
-    "eslint": "^5.1.0",
-    "eslint-plugin-vue": "^4.7.0",
-    "webpack-dev-server": ">=3.1.11"
+    "eslint": "^9.15.0",
+    "eslint-plugin-vue": "^9.30.0",
+    "webpack-dev-server": ">=3.1.11",
+    "@eslint/js": "^9.15.0",
+    "globals": "^15.12.0",
+    "vitest": "^1.0.4",
+    "@vue/test-utils": "^2.4.6",
+    "@vitejs/plugin-vue": "^4.5.2",
+    "jsdom": "^23.0.1"
+  },
+  "resolutions": {
+    "node-sass": "npm:sass@^1.32.0"
   }
 }

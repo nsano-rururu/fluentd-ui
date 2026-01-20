@@ -3,7 +3,7 @@
     %template{"v-if" => 'option.type==="enum"'}
       %b-tooltip{"v-bind:target" => "labelId(pluginType, option)", "placement" => "right", "v-bind:title" => "option.desc"}
       %label{"v-bind:id" => "labelId(pluginType, option)", "v-bind:for" => "inputId(pluginType, option)"}
-        {{ option.name | humanize }}
+        {{ humanize(option.name) }}
       %select{"v-bind:id" => "inputId(pluginType, option)",
               "v-bind:name" => "inputName(pluginType, option)",
               "v-model.lazy" => "selectedValue",
@@ -22,11 +22,11 @@
              "v-on:change" => "onChange",
              "type" => "checkbox"}
       %label{"v-bind:id" => "labelId(pluginType, option)", "v-bind:for" => "inputId(pluginType, option)"}
-        {{ option.name | humanize }}
+        {{ humanize(option.name) }}
     %template(v-else)
       %b-tooltip{"v-bind:target" => "labelId(pluginType, option)", "placement" => "right", "v-bind:title" => "option.desc"}
       %label{"v-bind:id" => "labelId(pluginType, option)", "v-bind:for" => "inputId(pluginType, option)"}
-        {{ option.name | humanize }}
+        {{ humanize(option.name) }}
       %input{"v-bind:id" => "inputId(pluginType, option)",
              "v-bind:name" => "inputName(pluginType, option)",
              "v-model.lazy" => "textValue",

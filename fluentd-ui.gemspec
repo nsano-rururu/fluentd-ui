@@ -32,28 +32,29 @@ Gem::Specification.new do |spec|
   spec.executables   = ["fluentd-ui"]
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
+  
+  spec.required_ruby_version = '>= 3.0.0'
 
   spec.add_dependency "fluentd", [">= 1.0.0", "< 2"]
-  spec.add_dependency 'rails', '~> 5.2.0'
-  spec.add_dependency "dig_rb", "~> 1.0.0"
-  spec.add_dependency "bootsnap", ">= 1.1.0"
-  spec.add_dependency 'sucker_punch', "~> 2.0.4"
+  spec.add_dependency 'rails', '~> 6.1.0'
+  spec.add_dependency "bootsnap", ">= 1.4.0"
+  spec.add_dependency 'sucker_punch', "~> 3.0"
   spec.add_dependency 'addressable'
   spec.add_dependency "font-awesome-rails"
-  spec.add_dependency 'sass-rails', '~> 5.0.7'
-  spec.add_dependency "haml-rails", "~> 1.0"
-  spec.add_dependency 'jbuilder', '~> 2.0'
-  spec.add_dependency "draper", '~> 3.0'
+  spec.add_dependency 'sassc-rails', '~> 2.1'
+  spec.add_dependency "haml-rails", "~> 2.0"
+  spec.add_dependency 'jbuilder', '~> 2.11'
+  spec.add_dependency "draper", '~> 4.0'
   spec.add_dependency "bundler"
-  spec.add_dependency "httpclient", "~> 2.5" # same as td-agent
+  spec.add_dependency "httpclient", "~> 2.8"
   spec.add_dependency "settingslogic"
-  spec.add_dependency "puma"
+  spec.add_dependency "puma", "~> 5.0"
   spec.add_dependency "thor"
-  spec.add_dependency "kramdown", "> 1.0.0"
+  spec.add_dependency "kramdown", ">= 2.3.0"
   spec.add_dependency "kramdown-haml"
-  spec.add_dependency "rubyzip", ">= 1.1", "< 3.0" # API changed as Zip::ZipFile -> Zip::File since v1.0.0
+  spec.add_dependency "rubyzip", "~> 2.3.0" # Restricted to avoid v3 breaking changes warning
   spec.add_dependency "diff-lcs"
-  spec.add_dependency "webpacker"
+  spec.add_dependency "webpacker", "~> 5.4"
 
   spec.add_dependency "fluent-plugin-td", "~> 1.0"
   spec.add_dependency "fluent-plugin-mongo", "~> 1.1"

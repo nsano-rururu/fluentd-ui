@@ -11,7 +11,7 @@
         %option{"v-for" => "option in options",
                 "v-bind:value" => "option",
                 "v-bind:selected" => "transportType === option"}
-          {{ option | toUpper }}
+          {{ toUpper(option) }}
     %p{"v-if" => 'transportType === "tcp"'}
       Nothing to configure
     %template(v-else)

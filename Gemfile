@@ -13,20 +13,24 @@ group :development, :test do
 end
 
 group :development do
-  gem 'listen', '>= 3.0.5', '< 3.2'
-  gem 'i18n_generators', '2.1.1'
+  gem 'listen', '~> 3.7'
+  gem 'i18n_generators', '~> 2.2'
   gem 'better_errors'
-  gem 'web-console', '~> 3.6'
+  gem 'web-console', '~> 4.2'
   gem 'binding_of_caller'
 end
 
 group :test do
   gem "factory_bot_rails"
-  gem "capybara", "~> 3.4.2"
+  gem "capybara", "~> 3.36"
   gem "capybara-screenshot"
-  gem "webdrivers"
-  gem "simplecov", "~> 0.16.1", require: false
-  gem "webmock", "~> 3.12.2"
+  gem "webdrivers", "= 5.3.0"
+  gem "simplecov", "~> 0.21.0", require: false
+  gem "webmock", "~> 3.14"
   gem "timecop"
-  gem "selenium-webdriver", "~> 3.13.1"
+  gem "selenium-webdriver", "~> 4.0"
 end
+
+# Fix for Ruby 3.2+ compatibility issue with concurrent-ruby 1.3.5+
+# See: https://github.com/ruby-concurrency/concurrent-ruby/issues/1051
+gem 'concurrent-ruby', '1.3.4'

@@ -7,7 +7,7 @@
       %b-button{"v-on:click" => "remove", "size" => "sm", "variant" => "light", "v-if" => "index !== 0"}
         = icon("fa-minus")
       %label
-        {{ containerType | humanize }}
+        {{ humanize(containerType) }}
       %label.pl-4.pr-2
         %input{"type" => "radio",
                "value" => "regexp",

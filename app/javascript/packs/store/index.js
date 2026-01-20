@@ -1,16 +1,12 @@
 /* global process:true */
-import Vue from "vue/dist/vue.esm";
-import Vuex from "vuex/dist/vuex.esm";
-import { createNamespaceHelpers } from "vuex/dist/vuex.esm";
-import createLogger from "vuex/dist/logger";
-
-Vue.use(Vuex);
+import { createStore } from "vuex";
+import { createLogger } from "vuex";
 
 const debug = process.env.NODE_ENV !== "production";
 
 import parserParams from "./modules/parser_params";
 
-const store = new Vuex.Store({
+const store = createStore({
   modules: {
     parserParams,
   },

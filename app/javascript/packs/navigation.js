@@ -1,9 +1,10 @@
+import { createApp } from "vue";
+
 const POLLING_INTERVAL = 3 * 1000;
 const POLLING_URL = "/polling/alerts";
 
 window.addEventListener("load", () => {
-  new Vue({
-    el: "#mainNav",
+  const app = createApp({
     data: function() {
       return {
         alerts: []
@@ -59,4 +60,5 @@ window.addEventListener("load", () => {
       }
     }
   });
+  app.mount("#mainNav");
 });

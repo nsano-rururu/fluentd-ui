@@ -3,13 +3,12 @@
 import "lodash/lodash";
 import "popper.js/dist/popper";
 import "bootstrap/dist/js/bootstrap";
+import { createApp } from "vue";
 import ParserPluginForm from "./components/parser_plugin_form";
 import store from "./store";
 
 window.addEventListener("load", () => {
-  new Vue({
-    el: "#in-tail-parse",
-    store,
+  const app = createApp({
     components: {
       "parser-plugin-form": ParserPluginForm
     },
@@ -161,4 +160,6 @@ window.addEventListener("load", () => {
       }
     }
   });
+  app.use(store);
+  app.mount("#in-tail-parse");
 });

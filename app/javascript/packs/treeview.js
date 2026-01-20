@@ -1,19 +1,22 @@
 /* global _ */
 "use strict";
 import "lodash/lodash";
+import { createApp } from "vue";
+
 window.addEventListener("load", () => {
-  new Vue({
-    el: "#treeview",
+  const app = createApp({
     props: {
       initialPath: {
         default: "/var/log",
         type: String
       }
     },
-    data: {
-      preview: "",
-      path: "",
-      paths: []
+    data() {
+      return {
+        preview: "",
+        path: "",
+        paths: []
+      };
     },
 
     computed: {
@@ -97,4 +100,5 @@ window.addEventListener("load", () => {
       }
     }
   });
+  app.mount("#treeview");
 });

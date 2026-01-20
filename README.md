@@ -16,7 +16,8 @@ fluentd-ui is a browser-based [fluentd](http://www.fluentd.org) and [td-agent](h
 
 ## Requirements
 
-- ruby 2.2.2 or later (since v1.0.0)
+- ruby 3.0.0 or later (tested with 3.2.9)
+- Rails 6.1+
 - fluentd v1.0.0 or later (also supports td-agent 3)
   - Currently, fluentd v1 and td-agent 3 support is in alpha state
 
@@ -56,8 +57,10 @@ Access http://localhost:9292/prefix by web browser.
 
 Use bundler:
 
-    $ gem install bundler --version 1.17.3
-    $ bundle install --path vendor/bundle
+    $ gem install bundler
+    $ bundle install
+
+**Note:** After upgrading to Rails 6.1, you may need to delete `Gemfile.lock` and run `bundle install` again to resolve dependency conflicts. The Gemfile includes a fix for Ruby 3.2+ compatibility with `concurrent-ruby`.
 
 ### Install dependent JavaScript packages
 

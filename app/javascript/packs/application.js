@@ -21,19 +21,15 @@ import "popper.js/dist/popper";
 import "bootstrap/dist/js/bootstrap";
 import "startbootstrap-sb-admin/js/sb-admin";
 
-import Vue from "vue/dist/vue.esm";
-import Vuex from "vuex/dist/vuex.esm";
-import BootstrapVue from "bootstrap-vue/dist/bootstrap-vue.esm";
+import { createApp } from "vue";
+import { createStore } from "vuex";
+import BootstrapVueNext from "bootstrap-vue-next";
+import "bootstrap-vue-next/dist/bootstrap-vue-next.css";
 
-Vue.use(Vuex);
-Vue.use(BootstrapVue);
-
-Vue.filter("to_json", function (value) {
-  return JSON.stringify(value);
-});
-
-window.Vue = Vue;
-window.Vuex = Vuex;
+// Make Vue and Vuex available globally for compatibility
+window.Vue = { createApp };
+window.Vuex = { createStore };
+window.BootstrapVueNext = BootstrapVueNext;
 
 import "../stylesheets/application.scss";
 

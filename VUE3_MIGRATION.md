@@ -21,8 +21,8 @@ For detailed Rails upgrade information, see [RAILS_UPGRADE.md](RAILS_UPGRADE.md)
 - `vuex`: `^3.0.1` → `^4.0.2`
 - `vue-loader`: `^15.7.0` → `^16.8.3`
 - `bootstrap-vue`: `^2.0.0-rc.14` → `bootstrap-vue-next@^0.14.10`
-- `eslint`: `^5.1.0` → `^7.32.0`
-- `eslint-plugin-vue`: `^4.7.0` → `^8.7.1`
+- `eslint`: `^5.1.0` → `^9.15.0`
+- `eslint-plugin-vue`: `^4.7.0` → `^9.30.0`
 
 ### Removed Dependencies
 - `vue-template-compiler`: No longer needed in Vue 3

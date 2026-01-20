@@ -46,7 +46,7 @@ jobs:
       - name: Install TD Agent
         run: sudo sh -c 'curl -L https://toolbelt.treasuredata.com/sh/install-ubuntu-trusty-td-agent3.sh | sh'
       - name: Use specific version of bundler
-        run: gem install bundler --version 2.5.23
+        run: gem install bundler --version 4.0.3
       - name: Setup rails
         run: ./bin/setup
       - name: Run tests

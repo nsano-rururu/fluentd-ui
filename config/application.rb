@@ -25,7 +25,6 @@ require "haml-rails"
 # require "kramdown-haml"
 require "sucker_punch"
 require "settingslogic"
-# require "kramdown-haml"  # Already commented above
 require "jbuilder"
 require "diff/lcs"
 require "webpacker"

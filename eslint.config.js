@@ -1,5 +1,6 @@
 const js = require("@eslint/js");
 const pluginVue = require("eslint-plugin-vue");
+const globals = require("globals");
 
 module.exports = [
   js.configs.recommended,
@@ -9,12 +10,11 @@ module.exports = [
       ecmaVersion: 2017,
       sourceType: "module",
       globals: {
+        ...globals.browser,
         $: "readonly",
         Rails: "readonly",
         Vue: "readonly",
-        relativeUrlRoot: "readonly",
-        browser: true,
-        es6: true,
+        relativeUrlRoot: "readonly"
       }
     },
     rules: {

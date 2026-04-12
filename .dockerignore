@@ -1,0 +1,51 @@
+# Git
+.git
+.gitignore
+
+# Documentation
+README.md
+ChangeLog.md
+*.md
+
+# Development files
+.rubocop.yml
+.rspec
+
+# CI/CD
+.github
+.travis.yml
+
+# Build artifacts
+/tmp/*
+/log/*
+/coverage
+/pkg
+/.bundle
+/vendor/bundle
+/node_modules
+/public/packs
+/public/packs-test
+/public/assets
+
+# Database
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+# Logs
+*.log
+
+# Fluentd UI specific
+/.fluentd-ui/
+/db/*-user.txt
+/db/*-fluentd.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode
+.idea

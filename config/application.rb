@@ -19,11 +19,12 @@ Bundler.require(*Rails.groups)
 # these gems are not required by Bundler.require
 require "font-awesome-rails"
 require "draper"
-require "sass"
+# sass-rails 6.0 uses sassc, not sass
 require "haml-rails"
+# kramdown-haml is incompatible with Haml 6+, commenting out for now
+# require "kramdown-haml"
 require "sucker_punch"
 require "settingslogic"
-require "kramdown-haml"
 require "jbuilder"
 require "diff/lcs"
 require "webpacker"
@@ -31,7 +32,7 @@ require "webpacker"
 module FluentdUi
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 5.2
+    config.load_defaults 6.1
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

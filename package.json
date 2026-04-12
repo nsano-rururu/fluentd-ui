@@ -5,25 +5,28 @@
     "lint": "eslint app/javascript"
   },
   "dependencies": {
-    "@rails/webpacker": "^4.0.2",
-    "bootstrap": "^4.5.0",
-    "bootstrap-vue": "^2.0.0-rc.14",
-    "codemirror": "^5.58.2",
-    "datatables.net-bs4": "1.10.24",
-    "es6-promise": "^4.2.4",
-    "jquery": "^3.5.0",
+    "@rails/webpacker": "^5.4.4",
+    "bootstrap": "^4.6.2",
+    "bootstrap-vue": "^2.23.1",
+    "codemirror": "^5.65.16",
+    "datatables.net-bs4": "^1.13.8",
+    "es6-promise": "^4.2.8",
+    "jquery": "^3.7.1",
     "lodash": "^4.17.21",
-    "popper.js": "^1.14.3",
-    "rails-ujs": "^5.2.0",
-    "startbootstrap-sb-admin": "^5.0.3",
-    "vue": "^2.6.8",
-    "vue-loader": "^15.7.0",
-    "vue-template-compiler": "^2.6.8",
-    "vuex": "^3.0.1"
+    "popper.js": "^1.16.1",
+    "rails-ujs": "^5.2.8",
+    "startbootstrap-sb-admin": "^5.0.5",
+    "vue": "^2.7.16",
+    "vue-loader": "^15.11.1",
+    "vue-template-compiler": "^2.7.16",
+    "vuex": "^3.6.2"
   },
   "devDependencies": {
-    "eslint": "^5.1.0",
-    "eslint-plugin-vue": "^4.7.0",
-    "webpack-dev-server": ">=3.1.11"
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.2.0",
+    "eslint-plugin-vue": "^10.8.0",
+    "globals": "^15.13.0",
+    "vue-eslint-parser": "^10.4.0",
+    "webpack-dev-server": "^4.15.2"
   }
 }

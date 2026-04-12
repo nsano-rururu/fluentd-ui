@@ -1,0 +1,44 @@
+FROM ruby:3.0-slim
+
+LABEL maintainer="Fluentd developers <fluentd@googlegroups.com>"
+LABEL description="fluentd-ui development docker image"
+LABEL Vendor="Fluent Organization"
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libssl-dev \
+    libxml2-dev \
+    libxslt1-dev \
+    ruby-dev \
+    nodejs \
+    npm \
+    git \
+ && rm -rf /var/lib/apt/lists/*
+
+# Set working directory
+WORKDIR /app
+
+# Copy Gemfile and package.json first for better caching
+COPY Gemfile Gemfile.lock fluentd-ui.gemspec ./
+COPY package.json package-lock.json ./
+
+# Install bundler and gems
+RUN gem install bundler -v 4.0.3
+RUN bundle config set --local path 'vendor/bundle'
+RUN bundle install
+
+# Install npm dependencies
+RUN npm install --legacy-peer-deps
+
+# Copy the rest of the application
+COPY . .
+
+# Precompile assets (optional - can be done at runtime too)
+# RUN bundle exec rake assets:precompile
+
+# Expose port
+EXPOSE 9292
+
+# Default command for development
+CMD ["bundle", "exec", "fluentd-ui", "start"]

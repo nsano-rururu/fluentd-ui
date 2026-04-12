@@ -37,3 +37,14 @@
 yarn-debug.log*
 .yarn-integrity
 /.fluentd-ui/
+
+# Bootsnap cache
+/tmp/cache/bootsnap*
+
+# Webpacker cache and manifest
+/public/packs-manifest.json
+/public/packs-manifest.json.br
+
+# Rails credentials
+/config/master.key
+/config/credentials/*.key

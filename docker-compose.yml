@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  fluentd-ui:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "9292:9292"
+    volumes:
+      # Mount source code for live reload during development
+      - .:/app
+      # Persist node_modules and vendor/bundle in named volumes
+      - node_modules:/app/node_modules
+      - bundle:/app/vendor/bundle
+    environment:
+      - RAILS_ENV=development
+      - RAILS_LOG_TO_STDOUT=true
+    stdin_open: true
+    tty: true
+    command: bundle exec fluentd-ui start
+
+volumes:
+  node_modules:
+  bundle:

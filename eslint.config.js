@@ -28,6 +28,7 @@ module.exports = [
       }],
       "vue/no-deprecated-events-api": "warn",
       "vue/no-deprecated-data-object-declaration": "warn",
+      "vue/no-deprecated-delete-set": "warn",
       "vue/require-prop-types": "warn"
     }
   },
